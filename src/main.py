@@ -25,6 +25,7 @@ DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 DISCORD_PREFIX = os.getenv("PREFIX")
 # Don't need this just yet but will make adding special intents later easier
 intents = Intents.default()
+intents.message_content = False
 intents.members = False
 
 # Extend discord bot class
@@ -35,15 +36,15 @@ class Bot(commands.Bot):
     
     def __init__(self):
         intents = discord.Intents.default()
-        # intents.message_content = True
+        intents.message_content = True
         super().__init__(
             command_prefix=DISCORD_PREFIX,
             intents=intents,
             case_insensitive=True,
-            activity=discord.Game(name="Green TCG!"),
+            activity=discord.Game(name="the Green TCG!"),
             status=discord.Status.online
             )
-        # print(f"Created bot with prefix {DISCORD_PREFIX}")
+        print(f"Created bot with prefix {DISCORD_PREFIX}.")
 
 # Create discord bot
 bot = Bot()
@@ -76,6 +77,12 @@ async def main():
     @bot.event
     async def on_ready():
         print(f'Logged into Discord as {bot.user}.')
+
+    
+    
+    # @bot.command()
+    # async def test2(self, ctx: commands.Context):
+    #     await ctx.send("yep it works")
 
     print("Starting Green TCG Bot...")
     async with bot:
