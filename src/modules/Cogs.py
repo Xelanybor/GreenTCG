@@ -31,7 +31,7 @@ class Cogs(commands.Cog):
     async def load(self, ctx: commands.Context, cog: str):
         "Load a given cog."
         try:
-            await self.bot.load_extension(cog)
+            await self.bot.load_extension("modules." + cog)
             await ctx.send(f"Successfully loaded cog `{cog}`.")
         except ExtensionNotFound:
             await ctx.send(f"Cog `{cog}` was unable to be found!")
@@ -45,7 +45,7 @@ class Cogs(commands.Cog):
     async def unload(self, ctx: commands.Context, cog: str):
         "Unload a given cog."
         try:
-            await self.bot.unload_extension(cog)
+            await self.bot.unload_extension("modules." + cog)
             await ctx.send(f"Successfully unloaded cog `{cog}`.")
         except ExtensionNotFound:
             await ctx.send(f"Cog `{cog}` was unable to be found!")
@@ -57,7 +57,7 @@ class Cogs(commands.Cog):
     async def reload(self, ctx: commands.Context, cog: str):
         "Reload a given cog."
         try:
-            await self.bot.reload_extension(cog)
+            await self.bot.reload_extension("modules." + cog)
             await ctx.send(f"Successfully reloaded cog `{cog}`")
         except ExtensionNotFound:
             await ctx.send(f"Cog `{cog}` was unable to be found!")
