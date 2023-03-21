@@ -42,4 +42,11 @@ Keep in mind that any time you want to run the code you'll need to reactivate th
 
 # Setting up the environment
 
-There's an example `.env` in the repo, fill in all the correct values and you should be good to go.
+Here's an example `.env` file, fill in all the correct values and you should be good to go.
+
+```
+PREFIX=$
+DISCORD_TOKEN={discord token of your bot}
+DISCORD_DEV_ID={discord id of developer (used for reloading bot modules via command)}
+DEBUG=False
+```
