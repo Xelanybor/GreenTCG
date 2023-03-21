@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 
 
-class Sync(commands.Cog):
+class CommandSync(commands.Cog):
     
     def __init__(self, bot: commands.Bot):
         super().__init__
@@ -33,4 +33,4 @@ class Sync(commands.Cog):
         await ctx.reply("Commands cleared locally!")
         
 async def setup(bot: commands.Bot):
-    await bot.add_cog(Sync(bot))
+    await bot.add_cog(CommandSync(bot))
