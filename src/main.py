@@ -53,7 +53,7 @@ async def main():
 
     # Load cogs
     for filename in os.listdir("src/modules"):
-        if filename[-3:] == ".py" and filename != "__init__.py" and filename != "Testing.py":
+        if filename[-3:] == ".py" and filename != "__init__.py" and filename != "testing.py":
             try:
                 if DEBUG:
                     print(f"Attempting to load module \"{filename}\"...")
@@ -66,10 +66,10 @@ async def main():
     if DEBUG:
         print("Loading Test module...")
         try:
-            await bot.load_extension("modules.Testing")
+            await bot.load_extension("modules.testing")
             print("Done")
         except Exception as e:
-                print(f"Couldn't load module \"Testing\": {e}")
+                print(f"Couldn't load module \"testing\": {e}")
 
     # Bot startup
     # ---------------------------------------------------------------------------------

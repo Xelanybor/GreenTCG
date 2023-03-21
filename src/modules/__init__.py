@@ -1,0 +1,1 @@
+"""Cogs that can be enabled and disabled in the discord bot."""
