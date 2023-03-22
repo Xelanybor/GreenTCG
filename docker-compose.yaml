@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+    bot:
+        build: ./code/bot
+        environment:
+          - PREFIX=${PREFIX}
+          - DISCORD_TOKEN=${DISCORD_TOKEN}
+          - DISCORD_DEV_ID=${DISCORD_DEV_ID}
+          - DEBUG=${DEBUG}
+        restart: always

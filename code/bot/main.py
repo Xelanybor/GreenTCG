@@ -52,7 +52,7 @@ bot = Bot()
 async def main():
 
     # Load cogs
-    for filename in os.listdir("src/modules"):
+    for filename in os.listdir("modules"):
         if filename[-3:] == ".py" and filename != "__init__.py" and filename != "testing.py":
             try:
                 if DEBUG:
