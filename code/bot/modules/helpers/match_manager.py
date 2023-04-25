@@ -4,9 +4,11 @@ class MatchManager():
 
     def __init__(self):
         self.lobbies = [
-            "vx2e4t",
-            "123456",
-            "654321"
+            "jcx27n",
+            "kp8c99",
+            "djmrx4",
+            "rzwcfg",
+            "dytfzs"
         ]
         self.available_lobbies = []
         self.busy_lobbies = {}
