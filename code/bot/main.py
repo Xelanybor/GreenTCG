@@ -41,7 +41,7 @@ class Bot(commands.Bot):
             command_prefix=DISCORD_PREFIX,
             intents=intents,
             case_insensitive=True,
-            activity=discord.Game(name="the Green TCG!"),
+            activity=discord.Game(name="Green TCG The Game™!"),
             status=discord.Status.online
             )
         print(f"Created bot with prefix {DISCORD_PREFIX}.")
