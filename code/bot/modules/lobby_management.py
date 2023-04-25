@@ -5,7 +5,7 @@ from discord.ext import commands
 
 from modules.helpers import embeds, tcgui, match_manager
 
-class TCG(commands.Cog):
+class LobbyManagement(commands.Cog):
 
     def __init__(self, bot: commands.Bot):
         super().__init__()
@@ -108,10 +108,10 @@ class TCG(commands.Cog):
         # await thread.send(f"{challenger.mention} has challenged {opponent.mention} to a game of TCG!")
         # print(f'Starter message: "{thread.starter_message.content}"')
 
-    
+    @lobbies.error
     @challenge.error
     async def print_errors(self, interaction, error):
         print(error)
 
 async def setup(bot: commands.Bot):
-    await bot.add_cog(TCG(bot))
+    await bot.add_cog(LobbyManagement(bot))

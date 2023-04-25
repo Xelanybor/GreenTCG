@@ -86,3 +86,58 @@ class OngoingMatch(ui.View):
         await interaction.response.defer()
         await self.end_match_callback(interaction)
         self.stop()
+
+# Card Creation
+# =======================================================================================================================
+
+class CreateFlairwarrior(ui.Modal, title="Creating a new Flairwarrior card!"):
+    card_name = ui.TextInput(label="Card Name", required=True)
+    atk = ui.TextInput(label = "Card ATK", required=True)
+    hp = ui.TextInput(label = "Card HP", required=True)
+    desc1 = ui.TextInput(label="Passive Ability", required=False)
+    desc2 = ui.TextInput(label="Activated Ability", required=False)
+
+    def __init__(self, card_color, modal_callback):
+        super().__init__()
+        self.card_type="Flairwarrior"
+        self.card_color=card_color
+
+        self.modal_callback = modal_callback
+
+    async def on_submit(self, interaction: discord.Interaction):
+        await self.modal_callback(self, interaction)
+    
+class CreateEvent(ui.Modal, title="Creating a new Event card!"):
+    card_name = ui.TextInput(label="Card Name", required=True)
+    desc1 = ui.TextInput(label="Card Description", required=True)
+
+    def __init__(self, card_color, modal_callback):
+        super().__init__()
+        self.card_type="Event"
+        self.card_color=card_color
+        self.desc2 = ''
+        self.atk=0
+        self.hp=0
+
+        self.modal_callback = modal_callback
+
+    async def on_submit(self, interaction: discord.Interaction):
+        await self.modal_callback(self, interaction)
+
+class CreateRole(ui.Modal, title="Creating a new Role card!"):
+    card_name = ui.TextInput(label="Card Name", required=True)
+    desc1 = ui.TextInput(label="Card Description", required=True)
+
+    def __init__(self, card_color, modal_callback):
+        super().__init__()
+
+        self.card_type="Role"
+        self.card_color=card_color
+        self.desc2 = ''
+        self.atk=0
+        self.hp=0
+
+        self.modal_callback = modal_callback
+
+    async def on_submit(self, interaction: discord.Interaction):
+        await self.modal_callback(self, interaction)
