@@ -1,5 +1,5 @@
-# GreenTCG
-Discord bot for playing GTCG The Game™!
+# About GreenTCG
+Discord bot for playing GTCG The Game™! Green The Card Game TCG™ (aka GTCGTGTM) was a card game designed to be played during Flaircon, a week-long event on the Flairwars Discord server. Since Flaircon is over, the code is no longer being maintained. The game itself was played on [an external website](https://playingcards.io/); the purpose of the Discord bot was to manage game lobbies and was used as a platform for players to challenge each other to matches. If you're particularly interested, you can find an explaination on how to play GTCGTGTM [here](https://docs.google.com/document/d/1VA46zOvycqDlAxfHvJB5HL4CS6YWK3wvz22_MY9EzI8/edit?usp=sharing).
 
 # Installing Python packages
 
